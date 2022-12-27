@@ -1,6 +1,6 @@
 {
   "type": "module",
-  "name": "@andy_oooh/create-express-ts",
+  "name": "server-persona",
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {

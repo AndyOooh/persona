@@ -9,7 +9,6 @@ const dbBaseUrl = DB_URL as string;
 // @access Public
 export const getQuestions = async (req: Request, res: Response) => {
   const { data: questionsArray } = await axios.get(`${dbBaseUrl}/questions`);
-  console.log('🚀  file: questions.controller.ts:10  questionsArray', questionsArray);
   return res.status(200).send(questionsArray);
 };
 
@@ -24,9 +23,11 @@ export const createQuestion = async () => {
 // @route GET /api/questions/:id
 // @access Public
 export const getQuestion = async (req: Request, res: Response) => {
-  // const { id } = req.params;
-  // const question = questions.filter(q => q.id === Number(id));
-  // return res.json(question);
+  console.log('Hi from getQuestion');
+  const { id } = req.params;
+  console.log('🚀  file: questions.controller.ts:28  id', id)
+  const { data: question } = await axios.get(`${dbBaseUrl}/questions/${id}`);
+  return res.status(200).send(question);
 };
 
 // @desc update a question
@@ -43,7 +44,3 @@ export const deleteQuestion = async () => {
   console.log('Hi from deleteQuestion');
 };
 
-export const getResult = (req: Request, res: Response) => {
-  const answer = req.body;
-  const points = answer.reduce((acc: number, curr: number) => acc + curr, 0);
-};

@@ -5,7 +5,6 @@ import {
   getQuestion,
   updateQuestion,
   deleteQuestion,
-  getResult
 } from '../controllers/questions.controller';
 
 // import QuestionsValidator from './Questions.validator';
@@ -17,6 +16,5 @@ router.route('/').get(getQuestions).post(
   createQuestion
 );
 router.route('/:id').get(getQuestion).put(updateQuestion).delete(deleteQuestion);
-router.route('/get-result').post(getResult);
 
 export default router;

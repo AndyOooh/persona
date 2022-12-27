@@ -1,9 +1,11 @@
 import express from 'express';
 
-import usersRoutes from './users/users.routes';
+import questionsRoutes from './questions.routes';
+// import questionsRoutes from './answers/answers.routes';
 
 const router = express.Router();
 
-router.use('/users', usersRoutes);
+router.use('/questions', questionsRoutes);
+// router.use('/answers', answersRoutes);
 
 export default router;

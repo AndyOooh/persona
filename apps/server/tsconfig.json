@@ -6,7 +6,7 @@
     "outDir": "./dist"
   },
   "include": ["src/**/*.ts"],
-  "exclude": ["node_modules", "tests"],
+  "exclude": ["node_modules", "test"],
   "ts-node": {
     // Tell ts-node CLI to install the --loader automatically
     "esm": true

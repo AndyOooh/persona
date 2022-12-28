@@ -1,6 +1,6 @@
 {
   "type": "module",
-  "name": "server-persona",
+  "name": "server",
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {

@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { Request, Response } from 'express';
+
 import { DB_URL } from '../configs';
-import { questionModel } from '../models/question.model';
+import { questionModel } from '../models/question.validation';
 import { getErrorMessage } from '../utils/helpers.utils';
 
 const dbBaseUrl = DB_URL as string;
@@ -10,8 +11,13 @@ const dbBaseUrl = DB_URL as string;
 // @route GET /api/questions
 // @access Public
 export const getQuestions = async (req: Request, res: Response) => {
-  const { data: questionsArray } = await axios.get(`${dbBaseUrl}/questions`);
-  return res.status(200).send(questionsArray);
+  try {
+    const { data: questionsArray } = await axios.get(`${dbBaseUrl}/questions`);
+    return res.status(200).send(questionsArray);
+    
+  } catch (error) {
+    return res.status(500).send(getErrorMessage(error));
+  }
 };
 
 // @desc Create new question
@@ -23,7 +29,6 @@ export const createQuestion = async (req: Request, res: Response) => {
     const { message } = error.details[0];
     return res.status(400).send(message);
   }
-
   try {
     const { data: newQuestion } = await axios.post(`${dbBaseUrl}/questions`, { ...value });
     return res.status(201).send(newQuestion);
@@ -36,23 +41,42 @@ export const createQuestion = async (req: Request, res: Response) => {
 // @route GET /api/questions/:id
 // @access Public
 export const getQuestion = async (req: Request, res: Response) => {
-  console.log('Hi from getQuestion');
   const { id } = req.params;
-  console.log('🚀  file: questions.controller.ts:28  id', id);
-  const { data: question } = await axios.get(`${dbBaseUrl}/questions/${id}`);
-  return res.status(200).send(question);
+  try {
+    const { data: question } = await axios.get(`${dbBaseUrl}/questions/${id}`);
+    return res.status(200).send(question);
+  } catch (error) {
+    return res.status(500).send(getErrorMessage(error));
+  }
 };
 
-// @desc update a question
+// @desc update a question - NB: this replaces a question fully. For updating only a few fields, use patch
 // @route PUT /api/questions/:id/update
 // @access Private
-export const updateQuestion = () => {
-  console.log('Hi from updateQuestion');
+export const updateQuestion = async (req: Request, res: Response) => {
+  const { id } = req.params;
+  const { error, value } = questionModel.validate(req.body);
+  if (error) {
+    const { message } = error.details[0];
+    return res.status(400).send(message);
+  }
+  try {
+    const { data: newQuestion } = await axios.put(`${dbBaseUrl}/questions/${id}`, { ...value });
+    return res.status(201).send(newQuestion);
+  } catch (error) {
+    return res.status(500).send(getErrorMessage(error));
+  }
 };
 
 // @desc delete a question
 // @route DELETE /api/questions/:id/delete
 // @access Private
-export const deleteQuestion = async () => {
-  console.log('Hi from deleteQuestion');
+export const deleteQuestion = async (req: Request, res: Response) => {
+  const { id } = req.params;
+  try {
+    const { data: question } = await axios.delete(`${dbBaseUrl}/questions/${id}`);
+    return res.status(200).send(question);   
+  } catch (error) {
+    return res.status(500).send(getErrorMessage(error));
+  }
 };

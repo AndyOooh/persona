@@ -87,6 +87,20 @@
           "score": 0.75
         }
       ]
+    },
+    {
+      "id": 5,
+      "text": "how are you doing?",
+      "options": [
+        {
+          "text": "Great",
+          "score": 0.25
+        },
+        {
+          "text": "Bad",
+          "score": 0.5
+        }
+      ]
     }
   ]
 }

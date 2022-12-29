@@ -7,14 +7,9 @@ import {
   deleteQuestion,
 } from '../controllers/questions.controller';
 
-// import QuestionsValidator from './Questions.validator';
-
 const router = express.Router();
 
-router.route('/').get(getQuestions).post(
-  // QuestionsValidator.register,
-  createQuestion
-);
+router.route('/').get(getQuestions).post(createQuestion);
 router.route('/:id').get(getQuestion).put(updateQuestion).delete(deleteQuestion);
 
 export default router;

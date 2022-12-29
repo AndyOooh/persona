@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { Request, Response } from 'express';
 import { DB_URL } from '../configs';
+import { questionModel } from '../models/question.model';
+import { getErrorMessage } from '../utils/helpers.utils';
 
 const dbBaseUrl = DB_URL as string;
 
@@ -15,8 +17,19 @@ export const getQuestions = async (req: Request, res: Response) => {
 // @desc Create new question
 // @route POST /api/questions
 // @access Private
-export const createQuestion = async () => {
-  console.log('Hi from createQuestion');
+export const createQuestion = async (req: Request, res: Response) => {
+  const { error, value } = questionModel.validate(req.body);
+  if (error) {
+    const { message } = error.details[0];
+    return res.status(400).send(message);
+  }
+
+  try {
+    const { data: newQuestion } = await axios.post(`${dbBaseUrl}/questions`, { ...value });
+    return res.status(201).send(newQuestion);
+  } catch (error) {
+    return res.status(500).send(getErrorMessage(error));
+  }
 };
 
 // @desc get a question
@@ -25,7 +38,7 @@ export const createQuestion = async () => {
 export const getQuestion = async (req: Request, res: Response) => {
   console.log('Hi from getQuestion');
   const { id } = req.params;
-  console.log('🚀  file: questions.controller.ts:28  id', id)
+  console.log('🚀  file: questions.controller.ts:28  id', id);
   const { data: question } = await axios.get(`${dbBaseUrl}/questions/${id}`);
   return res.status(200).send(question);
 };
@@ -43,4 +56,3 @@ export const updateQuestion = () => {
 export const deleteQuestion = async () => {
   console.log('Hi from deleteQuestion');
 };
-

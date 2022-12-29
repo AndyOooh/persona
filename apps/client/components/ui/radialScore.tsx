@@ -12,7 +12,7 @@ function RadialScore({ score }: Props) {
   };
   return (
     <>
-      <div className='radial-progress text-secondary' style={divStyles as CSSProperties}>
+      <div className='radial-progress bg-primary-focus border-4 border-primary-focus' style={divStyles as CSSProperties}>
         {score}%
       </div>
     </>

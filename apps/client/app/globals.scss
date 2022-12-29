@@ -8,6 +8,20 @@
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono',
     'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono',
     'Courier New', monospace;
+
+  // --primary: #efaba3;
+  // --primary-focus: #e3847d;
+  // --primary-content: #44403c;
+  // --secondary: #fbeeec;
+  // --secondary-focus: #f1bdb5;
+  // --secondary-content: #e98b7e;
+  // --accent: #5456c9;
+  // --neutral: #1c1622;
+  // --base-100: #fdfcfd;
+  // --info: #9ecde6;
+  // --success: #1d9579;
+  // --warning: #daab10;
+  // --error: #f23168;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -39,7 +53,12 @@ a {
 }
 
 .card-height {
-  height: 65vh;
+  height: 70vh;
+  max-height: 40rem;
+}
+
+.min-h-4em {
+  min-height: 4em;
 }
 
 .even-shadow {

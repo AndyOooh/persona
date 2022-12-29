@@ -10,8 +10,8 @@ const divStyles = {
 
 function Blog({}: Props) {
   return (
-    <section 
-    // className='bg-black main-height' 
+    <section
+    // className='bg-black main-height'
     >
       <div className='radial-progress' style={divStyles as CSSProperties}>
         65%
@@ -82,6 +82,29 @@ function Blog({}: Props) {
         <button className='btn btn-disabled'>...</button>
         <button className='btn'>99</button>
         <button className='btn'>100</button>
+      </div>
+
+      <div className='divider'></div>
+
+      <div className='bg-gray-300 flex flex-col gap-4'>
+        <progress className='progress w-56' value='70' max='100'>
+          No color
+        </progress>
+        <progress className='progress progress-primary w-56' value='70' max='100'>
+          Primary color
+        </progress>
+        <progress className='progress progress-secondary w-56' value='70' max='100'>
+          Secondary color
+        </progress>
+        <progress className='progress progress-secondary w-56' value='70' max='100'>
+          Secondary color
+        </progress>
+        <progress className='progress progress-accent w-56' value='70' max='100'>
+          Accent color
+        </progress>
+        <progress className='progress progress-success w-56' value='70' max='100'>
+          # Success color
+        </progress>
       </div>
     </section>
   );

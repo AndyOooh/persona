@@ -2,23 +2,45 @@
 
 import { useSearchParams } from 'next/navigation';
 
-import { createContext, useCallback, useMemo, useState } from 'react';
+import React, {
+  createContext,
+  useCallback,
+  useMemo,
+  useState,
+  Dispatch,
+  SetStateAction,
+} from 'react';
+import { Question } from 'types';
 
-type Context = any | null;
+export type TestContextType = {
+  questions: Question[];
+  answers: number[];
+  // handleUpdateAnswers: ((answerIndex: number) => void);
+  handleUpdateAnswers: ((answerIndex: number) => void);
+  page: string | null;
+  currentQuestion: Question | null;
+  score: number;
+  setScore: Dispatch<SetStateAction<number>>;
+};
 
-export const TestContext = createContext<Context | null>({
-  question: null,
-  answers: null,
-  handleUpdateAnsers: null,
+const initTestContext: TestContextType = {
+  questions: [],
+  answers: [],
+  handleUpdateAnswers: () => {},
   page: null,
   currentQuestion: null,
-  score: null,
-  setScore: null,
-});
+  setScore: () => {},
+  score: 0,
+  // setScore: null,
+};
+
+// export const TestContext = createContext<TestContextType | null>(null);
+
+export const TestContext = createContext<TestContextType>(initTestContext);
 
 type Props = {
   children: React.ReactNode;
-  questions: any;
+  questions: Question[];
 };
 
 export default function TestProvider({ children, questions }: Props) {
@@ -26,13 +48,15 @@ export default function TestProvider({ children, questions }: Props) {
   const [answers, setAnswers] = useState<number[]>(initialAnswerArrray);
   const searchParams = useSearchParams();
   const page = searchParams.get('question');
-  console.log('🚀  file: test-provider.tsx:29  page', page)
+  console.log('🚀  file: test-provider.tsx:29  page', page);
   const currentQuestion = page !== 'result' ? questions[Number(page) - 1] : null;
-  const [score, setScore] = useState<number | null>(null);
+  const [score, setScore] = useState<number>(0);
 
   const handleUpdateAnswers = useCallback(
     (answerIndex: number) => {
+      console.log('handleUpdateAnswers called !!!!')
       setAnswers(prev => {
+        if (!currentQuestion) return prev;
         const newAnswers = [...prev];
         newAnswers[currentQuestion.id - 1] = currentQuestion.options[answerIndex].score;
         return newAnswers;
@@ -41,7 +65,7 @@ export default function TestProvider({ children, questions }: Props) {
     [currentQuestion]
   );
 
-  const testContext: Context = useMemo(
+  const testContext: TestContextType = useMemo(
     () => ({
       questions,
       answers,

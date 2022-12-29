@@ -1,4 +1,5 @@
 import React from 'react';
+import { Question } from 'types';
 import TestProvider from './context/test-provider';
 
 type Props = {
@@ -8,7 +9,7 @@ type Props = {
 export default async function TestLayout({ children }: Props) {
   const baseUrl = 'http://localhost:8080';
   const res = await fetch(`${baseUrl}/questions`, {});
-  const data = await res.json();
+  const data: Question[] = await res.json();
   return (
     <section className='main-height flex justify-center items-center'>
       <TestProvider questions={data}>{children}</TestProvider>

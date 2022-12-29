@@ -10,25 +10,29 @@ function BottomNavSubmit({ handleSubmit }: Props) {
   const { page, answers, questions } = useContext(TestContext);
   return (
     <div className='card-actions btn-group items-center justify-center'>
-      {page > 1 && (
-        <Link href={`test?question=${Number(page) - 1}`} className='btn btn-secondary btn-sm'>
-          «
-        </Link>
-      )}
-
+      <Link
+        href={`test?question=${Number(page) - 1}`}
+        className={`btn btn-secondary hover:bg-accent btn-sm ${
+          page < 2 ? 'pointer-events-none bg-transparent' : ''
+        }`}>
+        «
+      </Link>
       <button
-        className='btn btn-outline btn-secondary rounded-lg '
+        className='btn btn-secondary hover:bg-accent'
         onClick={handleSubmit}
         disabled={!answers.every((answer: number) => answer >= 0)}>
         Submit
       </button>
-      {page < questions.length && (
-        <Link href={`test?question=${Number(page) + 1}`} className='btn btn-secondary btn-sm'>
-          »
-        </Link>
-      )}
+      <Link
+        href={`test?question=${Number(page) + 1}`}
+        className={`btn btn-secondary hover:bg-accent btn-sm ${
+          page > questions.length -1 ? 'pointer-events-none bg-transparent' : ''
+        }`}>
+        »
+      </Link>
     </div>
   );
+
 }
 
 export default BottomNavSubmit;

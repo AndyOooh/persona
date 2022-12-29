@@ -7,7 +7,11 @@ module.exports = {
     'node_mpdules/daisyui/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      spacing: {
+        '4em': '4em',
+      }
+    },
   },
   plugins: [require('daisyui')],
   daisyui: {
@@ -15,13 +19,14 @@ module.exports = {
     themes: [
       {
         mytheme: {
-          primary: '#EFABA3',
-          'primary-focus': '#E98B7E',
-          'primary-content': '#44403c',
-          secondary: '#FBEEEC',
-          'secondary-focus': '#F1BDB5',
-          'secondary-content': '#E98B7E',
-          accent: '#5456c9',
+          primary: '#E19C90',
+          // 'primary-focus': '#e3857d',
+          'primary-focus': '#F1BDB5',
+          // 'primary-content': '#14403c',
+          secondary: '#F8DEDA',
+          // 'secondary-focus': '#F1BDB5',
+          // 'secondary-content': '#E98B7E',
+          accent: '#F1BDB5',
           neutral: '#1C1622',
           'base-100': '#FDFCFD',
           info: '#9ECDE6',

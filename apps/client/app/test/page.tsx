@@ -1,5 +1,4 @@
-import QuestionCard from './components/card';
-import StepsNav from './stepsNav';
+import QuestionCard from './components/questionCard';
 import TestStart from './components/testStart';
 
 type Props = {

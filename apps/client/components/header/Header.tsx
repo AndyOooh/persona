@@ -10,7 +10,7 @@ function Header({}: Props) {
   return (
     <header className='navbar bg-primary text-primary-content'>
       <div className='flex-1'>
-        <Link href='/' className='btn btn-ghost normal-case text-xl '>
+        <Link href='/' className='btn btn-primary normal-case text-xl '>
           {/* <Image src={logo} alt='logo' className='h-full w-full rounded-full border-2 border-secondary-content' /> */}
           <Image src={logo} alt='logo' className='h-full w-full rounded-full even-shadow' />
         </Link>
@@ -18,10 +18,10 @@ function Header({}: Props) {
       <nav className='flex-none'>
         <ul className='menu menu-horizontal px-1 font-medium'>
           <li>
-            <Link href={'/test'}>Test</Link>
+            <Link href={'/test'} className='btn-primary'>Test</Link>
           </li>
           <li>
-            <Link href={'/blog'}>Blog</Link>
+            <Link href={'/blog'} className='btn-primary'>Blog</Link>
           </li>
         </ul>
       </nav>

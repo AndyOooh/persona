@@ -1,0 +1,93 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "text": "You’ve been sitting in the doctor’s waiting room for more than 25 minutes. You:",
+      "options": [
+        {
+          "text": "Look at your watch every two minutes",
+          "score": 0
+        },
+        {
+          "text": "Bubble with inner anger, but keep quiet",
+          "score": 0.25
+        },
+        {
+          "text": "Explain to other equally impatient people in the room that the doctor is always running late",
+          "score": 0.5
+        },
+        {
+          "text": "Complain in a loud voice, while tapping your foot impatiently",
+          "score": 0.75
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "You’re having an animated discussion with a colleague regarding a project that you’re in charge of. You:",
+      "options": [
+        {
+          "text": "Don’t dare contradict them",
+          "score": 0
+        },
+        {
+          "text": "Think that they are obviously right",
+          "score": 0.25
+        },
+        {
+          "text": "Defend your own point of view, tooth and nail",
+          "score": 0.5
+        },
+        {
+          "text": "Continuously interrupt your colleague",
+          "score": 0.75
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "You’re really busy at work and a colleague is telling you their life story and personal woes. You:",
+      "options": [
+        {
+          "text": "Don’t dare to interrupt them",
+          "score": 0
+        },
+        {
+          "text": "Think it’s more important to give them some of your time; work can wait",
+          "score": 0.25
+        },
+        {
+          "text": "Listen, but with only with half an ear",
+          "score": 0.5
+        },
+        {
+          "text": "Interrupt and explain that you are really busy at the moment",
+          "score": 0.75
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "You are taking part in a guided tour of a museum. You:",
+      "options": [
+        {
+          "text": "Are a bit too far towards the back so don’t really hear what the guide is saying",
+          "score": 0
+        },
+        {
+          "text": "Follow the group without question",
+          "score": 0.25
+        },
+        {
+          "text": "Make sure that everyone is able to hear properly",
+          "score": 0.5
+        },
+        {
+          "text": "Are right up the front, adding your own comments in a loud voice",
+          "score": 0.75
+        }
+      ]
+    }
+    
+  ]
+}

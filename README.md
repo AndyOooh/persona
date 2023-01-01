@@ -3,17 +3,12 @@
 
 
 <!-- PROJECT LOGO -->
-<br />
 <div align="center">
-  <!-- <a href="https://github.com/AndyOooh/persona/blob/main/apps/client/public/logo1-transparent.png"> -->
-  <a href="https://img.buzzfeed.com/buzzfeed-static/static/2018-10/4/17/asset/buzzfeed-prod-web-04/sub-buzz-26014-1538688395-7.jpg?crop=600%3A900%3B0%2C0&downsize=900:*&output-format=auto&output-quality=auto">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
 
-<h1 align="center">Persona</h3>
-  <h4 align="center">
-    A test assignment for teamway.io
-  </h4>
+<img src="https://user-images.githubusercontent.com/60953822/210187142-107019aa-38a6-4e65-9268-f61b76e578d4.png" alt="Logo" width="80" height="80">
+
+<h1>Persona</h3>
+<h4>A test assignment for teamway.io</h4>
   <p>
     <a href="https://github.com/AndyOooh/repo_name">View Demo</a>
     ·

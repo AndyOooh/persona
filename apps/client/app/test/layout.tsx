@@ -8,7 +8,7 @@ type Props = {
 };
 
 export default async function TestLayout({ children }: Props) {
-  const baseUrl = 'http://localhost:8080';
+  const baseUrl = process.env.NEXT_PUBLIC_BASEURL;
   const res = await fetch(`${baseUrl}/questions`, {});
   const data: Question[] = await res.json();
   return (

@@ -1,6 +1,5 @@
 import Link from 'next/link';
 
-
 export default function TestStart() {
   return (
     <div className='hero main-height bg-no-repeat'>

@@ -40,9 +40,7 @@ function QuestionCard() {
       <>
         <div className='flex flex-col items-center w-full'>
           <h2 className='card-title'>{`Question ${page}`}</h2>
-          <p className='text-center min-h-fit sm:h-4em'>
-            {currentQuestion?.text}
-          </p>
+          <p className='text-center min-h-fit sm:h-4em'>{currentQuestion?.text}</p>
           <AnswersList />
         </div>
         <BottomNavSubmit handleSubmit={handleSubmit} />

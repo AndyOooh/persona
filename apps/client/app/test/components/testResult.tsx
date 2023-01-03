@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import RadialScore from '../../../components/ui/radialScore';
+import RadialScore from './radialScore';
 import { TestContext } from '../context/test-provider';
 
 function TestResult() {
@@ -11,7 +11,7 @@ function TestResult() {
         means you are exceptionally extrovert, while 0% means the opposite.
       </p>
       <p className='flex-grow-0 text-lg'>{`Your score:`} </p>
-      <RadialScore score={score.toFixed()} />
+      <RadialScore score={Math.round(score)} />
 
       <div className='hidden sm:flex items-center gap-4'>
         <p>Introvert</p>

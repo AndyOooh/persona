@@ -126,12 +126,12 @@ and
 yarn test
 ```
 
-However, you can also run the apps separately by prefixing the commads with `:client`, `:server` or `:database`. For example, to start the client only, run:
+However, you can also run the apps separately by using the `--filter` flag in combination with the app names `client`, `server` or `database`. For example, to start the client only, run:
 
 ```sh
-yarn dev:client
+yarn --filter client
 ```
-Or you can cd into the specific directories and use the commands there.
+Or you can *cd* into the specific directories and use the commands there.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

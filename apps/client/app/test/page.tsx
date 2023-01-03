@@ -5,9 +5,7 @@ type Props = {
   searchParams?: { [key: string]: string | string[] | undefined };
 };
 
-async function Test({ searchParams }: Props) {
-  console.log('🚀  file: page.tsx:10  searchParams', searchParams);
-  console.log('Has question param:', !!searchParams?.question);
+function Test({ searchParams }: Props) {
   return searchParams?.question ? <QuestionCard /> : <TestStart />;
 }
 

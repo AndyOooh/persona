@@ -8,12 +8,13 @@ type Props = {
 
 function BottomNavSubmit({ handleSubmit }: Props) {
   const { page, answers, questions } = useContext(TestContext);
+  const pageNumber = Number(page);
   return (
     <div className='card-actions btn-group items-center justify-center'>
       <Link
-        href={`test?question=${Number(page) - 1}`}
+        href={`test?question=${pageNumber - 1}`}
         className={`btn btn-secondary hover:bg-accent btn-sm ${
-          page < 2 ? 'pointer-events-none bg-transparent' : ''
+          pageNumber < 2 ? 'pointer-events-none bg-transparent' : ''
         }`}>
         «
       </Link>
@@ -24,9 +25,9 @@ function BottomNavSubmit({ handleSubmit }: Props) {
         Submit
       </button>
       <Link
-        href={`test?question=${Number(page) + 1}`}
+        href={`test?question=${pageNumber + 1}`}
         className={`btn btn-secondary hover:bg-accent btn-sm ${
-          page > questions.length -1 ? 'pointer-events-none bg-transparent' : ''
+          pageNumber > questions.length -1 ? 'pointer-events-none bg-transparent' : ''
         }`}>
         »
       </Link>

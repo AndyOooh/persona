@@ -4,9 +4,7 @@ import React from 'react';
 
 import logo from '../../public/logo1-transparent.png';
 
-type Props = {};
-
-function Header({}: Props) {
+function Header() {
   return (
     <header className='navbar bg-primary text-primary-content'>
       <div className='flex-1'>
@@ -17,10 +15,14 @@ function Header({}: Props) {
       <nav className='flex-none'>
         <ul className='menu menu-horizontal px-1 font-medium'>
           <li>
-            <Link href={'/test'} className='btn-primary'>Test</Link>
+            <Link href={'/test'} className='btn-primary'>
+              Test
+            </Link>
           </li>
           <li>
-            <Link href={'/blog'} className='btn-primary'>Blog</Link>
+            <Link href={'/blog'} className='btn-primary'>
+              Blog
+            </Link>
           </li>
         </ul>
       </nav>

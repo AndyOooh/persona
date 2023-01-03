@@ -4,7 +4,6 @@ import { TestContext } from '../context/test-provider';
 
 function AnswersList() {
   const { answers, handleUpdateAnswers, page, currentQuestion } = useContext(TestContext);
-  console.log('🚀  file: answersList.tsx:17  answers', answers);
 
   return (
     <div className='grid sm:auto-rows-fr w-full place-items-center items-stretch gap-1'>

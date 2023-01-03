@@ -49,12 +49,12 @@ function QuestionCard() {
   }
 
   return (
-    <div className='card card-height bg-primary bg-opacity-95 text-primary-content w-11/12 sm:w-2/3 md:w-1/2 sm:max-w-3xl scroll rounded-3xl'>
+    <article className='card card-height bg-primary bg-opacity-95 text-primary-content w-11/12 sm:w-2/3 md:w-1/2 sm:max-w-3xl scroll rounded-3xl'>
       <div className='card-body items-center justify-between'>
         <StepNavigation />
         {cardContent}
       </div>
-    </div>
+    </article>
   );
 }
 

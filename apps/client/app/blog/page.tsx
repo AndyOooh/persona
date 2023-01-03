@@ -1,14 +1,10 @@
-import { CSSProperties } from 'react';
-
-type Props = {};
-
 const divStyles = {
   '--value': '65',
   '--size': '5rem',
   '--thickness': '0.75rem',
 };
 
-function Blog({}: Props) {
+function Blog() {
   return (
     <section className='hero main-height bg-no-repeat'>
       <div className='hero-overlay bg-black bg-opacity-40'></div>

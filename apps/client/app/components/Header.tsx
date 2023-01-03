@@ -4,9 +4,7 @@ import React from 'react';
 
 import logo from '../../public/logo1-transparent.png';
 
-type Props = {};
-
-function Header({}: Props) {
+function Header() {
   return (
     <header className='navbar bg-primary text-primary-content'>
       <div className='flex-1'>

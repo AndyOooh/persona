@@ -48,7 +48,6 @@ export default function TestProvider({ children, questions }: Props) {
   const [answers, setAnswers] = useState<number[]>(initialAnswerArrray);
   const searchParams = useSearchParams();
   const page = searchParams.get('question');
-  console.log('🚀  file: test-provider.tsx:29  page', page);
   const currentQuestion = page !== 'result' ? questions[Number(page) - 1] : null;
   const [score, setScore] = useState<number>(0);
 

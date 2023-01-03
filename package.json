@@ -8,10 +8,18 @@
   ],
   "scripts": {
     "build": "turbo run build",
+    "clean": "turbo run clean",
     "dev": "turbo run dev --parallel",
+    "dev:client": "turbo run dev --parallel --filter=client",
+    "dev:server": "turbo run dev --parallel --filter=server",
+    "dev:database": "turbo run dev --parallel --filter=database",
     "dev:backend": "yarn dev --filter=server --filter=database",
+    "test": "turbo run test",
+    "test:client": "turbo run test --filter=client",
+    "test:server": "turbo run test --filter=server",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "coverage": "turbo run coverage"
   },
   "devDependencies": {
     "eslint-config-custom": "*",

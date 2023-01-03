@@ -1,12 +1,14 @@
 {
-  "extends": "@tsconfig/node18/tsconfig.json",
+  "extends": "tsconfig/base.json",
   "compilerOptions": {
+    "lib": ["es2022"],
     "module": "es2022",
+    "target": "es2022",
     // "rootDir": "./src",
     "outDir": "./dist"
   },
-  "include": ["src/**/*.ts", "tests/**/*.ts"],
-  "exclude": ["node_modules"],
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "tests/**/*.ts", "coverage", ".turbo"],
   "ts-node": {
     // Tell ts-node CLI to install the --loader automatically
     "esm": true

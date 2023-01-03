@@ -10,7 +10,7 @@ module.exports = {
     extend: {
       spacing: {
         '4em': '4em',
-      }
+      },
     },
   },
   plugins: [require('daisyui')],
@@ -37,10 +37,11 @@ module.exports = {
       },
       // 'light',
       // 'bumblebee',
-      'retro',
+      // 'retro',
       // 'coffee',
       // 'black',
       // 'business',
+      // 'dark',
     ],
     // these are all defaults
     base: true,

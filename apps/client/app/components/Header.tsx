@@ -17,10 +17,14 @@ function Header({}: Props) {
       <nav className='flex-none'>
         <ul className='menu menu-horizontal px-1 font-medium'>
           <li>
-            <Link href={'/test'} className='btn-primary'>Test</Link>
+            <Link href={'/test'} className='btn-primary'>
+              Test
+            </Link>
           </li>
           <li>
-            <Link href={'/blog'} className='btn-primary'>Blog</Link>
+            <Link href={'/blog'} className='btn-primary'>
+              Blog
+            </Link>
           </li>
         </ul>
       </nav>

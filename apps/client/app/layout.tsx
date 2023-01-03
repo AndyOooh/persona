@@ -1,3 +1,5 @@
+'use client';
+
 import { Brygada_1918 } from '@next/font/google';
 
 import Header from './components/Header';

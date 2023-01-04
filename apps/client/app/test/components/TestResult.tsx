@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import RadialScore from './radialScore';
+import RadialScore from './RadialScore';
 import { TestContext } from '../context/test-provider';
 
 function TestResult() {

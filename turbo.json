@@ -1,6 +1,6 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalDependencies": ["$NEXT_PUBLIC_BASEURL"],
+  "globalEnv": ["NEXT_PUBLIC_BASEURL"],
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],

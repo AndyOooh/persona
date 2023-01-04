@@ -1,5 +1,5 @@
-import QuestionCard from './components/questionCard';
-import TestStart from './components/testStart';
+import QuestionCard from './components/QuestionCard';
+import TestStart from './components/TestStart';
 
 type Props = {
   searchParams?: { [key: string]: string | string[] | undefined };

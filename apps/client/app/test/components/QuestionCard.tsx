@@ -3,12 +3,12 @@
 import { useContext } from 'react';
 import { useRouter } from 'next/navigation';
 
-import AnswersList from './answersList';
-import TestResult from './testResult';
+import AnswersList from './AnswersList';
+import TestResult from './TestResult';
 import { TestContext } from '../context/test-provider';
-import TestStart from './testStart';
-import StepNavigation from './stepNavigation';
-import BottomNavSubmit from './bottomNavSubmit';
+import TestStart from './TestStart';
+import StepNavigation from './StepNavigation';
+import BottomNavSubmit from './BottomNavSubmit';
 
 function QuestionCard() {
   const { page, currentQuestion, questions, answers, setScore } = useContext(TestContext);

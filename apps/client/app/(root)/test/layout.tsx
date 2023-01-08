@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Question } from 'types';
 import TestProvider from './context/test-provider';
 

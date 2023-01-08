@@ -41,7 +41,7 @@ module.exports = {
       // 'coffee',
       // 'black',
       // 'business',
-      // 'dark',
+      'dark',
     ],
     // these are all defaults
     base: true,

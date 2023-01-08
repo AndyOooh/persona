@@ -151,7 +151,7 @@ yarn dev:client
 
 Or you can _cd_ into the specific directories and use the commands there.
 
-Once you have the development servers running, you can access the client at [localhost:3000](http://localhost:3000) and the database at [localhost:4000](http://localhost:4000).
+Once you have the development servers running, you can access the client at [localhost:3000](http://localhost:3000) and the database at [localhost:8000](http://localhost:8000).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

@@ -1,19 +1,19 @@
-import Home from './page';
-
 import { cleanup, render } from '@testing-library/react';
-import Header from './components/Header';
 
-afterEach(cleanup);
+import Home from './page';
+import Header from '../components/Header';
+import { HeaderProps } from '../components/Header';
 
 describe('/ route', () => {
   describe('Header', () => {
+    const headerProps: HeaderProps = { theme: 'mytheme', setTheme: () => null };
     it('should render the logo', () => {
-      const { getByRole } = render(<Header />);
+      const { getByRole } = render(<Header {...headerProps} />);
       const image = getByRole('img', { name: 'logo' }) as HTMLImageElement;
       expect(image.src).toContain('/_next/image?url');
     });
     it('should render a nav element', () => {
-      const { getByRole } = render(<Header />);
+      const { getByRole } = render(<Header {...headerProps} />);
       const nav = getByRole('navigation');
       expect(nav).toBeInTheDocument();
     });

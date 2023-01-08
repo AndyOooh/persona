@@ -1,7 +1,6 @@
 'use client';
 
 import { useSearchParams } from 'next/navigation';
-
 import React, {
   createContext,
   useCallback,
@@ -10,13 +9,13 @@ import React, {
   Dispatch,
   SetStateAction,
 } from 'react';
+
 import { Question } from 'types';
 
 export type TestContextType = {
   questions: Question[];
   answers: number[];
-  // handleUpdateAnswers: ((answerIndex: number) => void);
-  handleUpdateAnswers: ((answerIndex: number) => void);
+  handleUpdateAnswers: (answerIndex: number) => void;
   page: string | null;
   currentQuestion: Question | null;
   score: number;
@@ -31,10 +30,7 @@ const initTestContext: TestContextType = {
   currentQuestion: null,
   setScore: () => {},
   score: 0,
-  // setScore: null,
 };
-
-// export const TestContext = createContext<TestContextType | null>(null);
 
 export const TestContext = createContext<TestContextType>(initTestContext);
 
@@ -53,7 +49,6 @@ export default function TestProvider({ children, questions }: Props) {
 
   const handleUpdateAnswers = useCallback(
     (answerIndex: number) => {
-      console.log('handleUpdateAnswers called !!!!')
       setAnswers(prev => {
         if (!currentQuestion) return prev;
         const newAnswers = [...prev];

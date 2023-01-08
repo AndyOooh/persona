@@ -37,11 +37,8 @@ module.exports = {
       },
       // 'light',
       // 'bumblebee',
-      // 'retro',
-      // 'coffee',
-      // 'black',
-      // 'business',
-      'dark',
+      'business',
+      // 'dark',
     ],
     // these are all defaults
     base: true,

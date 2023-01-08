@@ -1,9 +1,3 @@
-const divStyles = {
-  '--value': '65',
-  '--size': '5rem',
-  '--thickness': '0.75rem',
-};
-
 function Blog() {
   return (
     <section className='hero main-height bg-no-repeat'>

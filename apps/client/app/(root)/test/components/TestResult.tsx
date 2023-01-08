@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
-import RadialScore from './RadialScore';
+
 import { TestContext } from '../context/test-provider';
+import RadialScore from './RadialScore';
 
 function TestResult() {
   const { score } = useContext(TestContext);

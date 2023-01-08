@@ -1,19 +1,26 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import { Brygada_1918 } from '@next/font/google';
 
-import Header from '../components/Header';
 import '../styles/globals.scss';
+import Header from '../components/Header';
 import hero from '../../public/hero/yeshi-kangrang-iuqxv7kFj64-unsplash.jpg';
-import { useState } from 'react';
 
 const brygada = Brygada_1918({ subsets: ['latin'] });
 
-export type Theme = 'mytheme' | 'dark'
+export type Theme = 'business' | 'mytheme';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>('mytheme');
-  const theme2 = localStorage.getItem('theme');
+
+  useEffect(() => {
+    const fetchedTheme = localStorage.getItem('theme');
+    if (fetchedTheme) {
+      setTheme(fetchedTheme as Theme);
+    }
+  }, []);
+
   return (
     <html lang='en' className={brygada.className} data-theme={theme}>
       <head />

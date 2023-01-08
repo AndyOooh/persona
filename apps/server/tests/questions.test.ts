@@ -35,7 +35,7 @@ describe('Controller / Questions', () => {
   });
 
   afterAll(async () => {
-    console.log('gonna stop json server');
+    console.log('closing json server...');
     server.close(() => {
       // console.log('closed');
     });

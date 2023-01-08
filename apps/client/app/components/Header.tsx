@@ -5,12 +5,17 @@ import React from 'react';
 import { Theme } from '../(root)/layout';
 import logo from '../../public/logo1-transparent.png';
 
-type Props = {
+export type HeaderProps = {
   theme: Theme;
   setTheme: (theme: Theme) => void;
 };
 
-function Header({ theme, setTheme }: Props) {
+function Header({ theme, setTheme }: HeaderProps) {
+  const handleSetTheme = () => {
+    const newTheme = theme === 'mytheme' ? 'business' : 'mytheme';
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+  };
   return (
     <header className='navbar bg-primary text-primary-content'>
       <div className='flex-1'>
@@ -25,7 +30,7 @@ function Header({ theme, setTheme }: Props) {
               type='checkbox'
               className='toggle toggle-primary'
               checked={theme === 'mytheme' ? true : false}
-              onClick={() => setTheme(theme === 'mytheme' ? 'dark' : 'mytheme')}
+              onChange={handleSetTheme}
             />
           </label>
         </div>

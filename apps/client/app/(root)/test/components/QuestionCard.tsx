@@ -3,9 +3,9 @@
 import { useContext } from 'react';
 import { useRouter } from 'next/navigation';
 
+import { TestContext } from '../context/test-provider';
 import AnswersList from './AnswersList';
 import TestResult from './TestResult';
-import { TestContext } from '../context/test-provider';
 import TestStart from './TestStart';
 import StepNavigation from './StepNavigation';
 import BottomNavSubmit from './BottomNavSubmit';
